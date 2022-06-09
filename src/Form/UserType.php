@@ -23,14 +23,14 @@ class UserType extends AbstractType
                 'required' => true,
                 'label' => 'Your mail*'
             ])
-            ->add('roles')
+            /* ->add('roles')*/
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'invalid_message' => 'Les mots de passe doivent être identique',
+                'invalid_message' => 'Les mots de passe doivent être identiques',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
-                'first-options' => ['label' => 'Password*'],
-                'second-options' => ['label' => 'Confirm your password*'],
+                'first_options' => ['label' => 'Password*'],
+                'second_options' => ['label' => 'Confirm your password*'],
 
                 'constraints' => [
                     new NotBlank(['message' => 'A password is necessary']),

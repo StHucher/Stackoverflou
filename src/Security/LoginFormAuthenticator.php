@@ -49,9 +49,9 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        //TODO
-        //Faire la redirection  après identification sur la page home par exemple
-        //return new RedirectResponse ($this->urlGenerator->generate ('home'));
+        //Redirection sur la page des messages après identification
+        return new RedirectResponse ($this->urlGenerator->generate ('app_message'));
+
         // For example:
         // return new RedirectResponse($this->urlGenerator->generate('some_route'));
         //!throw new \Exception('TODO: provide a valid redirect inside '.__FILE__); à commenter
