@@ -18,8 +18,8 @@
 
     <li>{{ message.id }} {{ message.content }}</li>
 
-
-    {% if app.user == message.users %} {# If the user is the message's writter, the buttons "Modify" and "delete" are visible #}
+{# If the user is the message's writter, the buttons "Modify" and "delete" are visible #}
+    {% if app.user == message.users %} 
     {# {{ dump(app.user) }} #}
 
     <a href="{{ path('message_edit', {id:message.id})}}" role="button" class="btn btn-warning mt-5 px-5">Modifier le message</a>
