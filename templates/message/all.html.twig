@@ -9,16 +9,17 @@
 </style>
 
 <div class="example-wrapper">
-    <div class ="mb-5">
-    <a href="{{path('app_message')}}" >Back</a>
-    </div>
+    <a href="{{ path('app_logout') }}" role ="button" class="btn btn-secondary mb-5">Log out</a>
+
 {# display of firstname #}
     <h1>Hello {{ app.user.firstname }} ! ✅</h1>
 
-    This friendly message is coming from:
+    This is the list of messages
     <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/html/projet/stackoverflou/src/Controller/MessageController.php'|file_link(0) }}">src/Controller/MessageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/html/projet/stackoverflou/templates/message/index.html.twig'|file_link(0) }}">templates/message/index.html.twig</a></code></li>
+        {% for message in messages %}
+        <a href="{{ path('message_show',{id: message.id})}}"> <li>{{ message.id }} {{ message.content }}</li> </a>
+        
+        {% endfor %}
     </ul>
 
 

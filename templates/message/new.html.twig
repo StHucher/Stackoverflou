@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MessageController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <div class ="mb-5">
+    <a href="{{path('app_message')}}" >Back</a>
+    </div>
+{# display of firstname #}
+    <h1>Hello {{ app.user.firstname }} ! ✅</h1>
+    <h3>You can write your message here</h3>
+
+{{ include('message/_formNew.html.twig') }}
+        
+
+
+   
+</div>
+{% endblock %}
